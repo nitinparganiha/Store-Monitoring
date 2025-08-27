@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<section class="card">
+	<h1>Welcome</h1>
+	<p>Please <a href="{{ url_for('main.login') }}">login</a> or <a href="{{ url_for('main.register') }}">register</a>.</p>
+</section>
+{% endblock %}
+
+
+
+

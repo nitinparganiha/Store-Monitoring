@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<section class="card">
+	<h2>Your details</h2>
+	<table class="table">
+		<tr><th>Email</th><td>{{ user.email }}</td></tr>
+		<tr><th>Uptime last hour</th><td>{{ user.uptime_last_hour or '-' }}</td></tr>
+		<tr><th>Uptime last day</th><td>{{ user.uptime_last_day or '-' }}</td></tr>
+		<tr><th>Uptime last week</th><td>{{ user.uptime_last_week or '-' }}</td></tr>
+		<tr><th>Downtime last hour</th><td>{{ user.downtime_last_hour or '-' }}</td></tr>
+		<tr><th>Downtime last day</th><td>{{ user.downtime_last_day or '-' }}</td></tr>
+		<tr><th>Downtime last week</th><td>{{ user.downtime_last_week or '-' }}</td></tr>
+	</table>
+	
+	<div class="button-container">
+		<a href="{{ url_for('main.download_csv') }}" class="btn btn-primary">Download CSV</a>
+	</div>
+</section>
+{% endblock %}
+
+
+
+
